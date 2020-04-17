@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="unoGame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UnoGameController">
+   <children>
+    <ImageView fitHeight="800.0" fitWidth="1400.0" layoutX="-6.0" layoutY="10.0" preserveRatio="false">
+      <image>
+        <Image url="@../background_image.jpg" />
+      </image>
+    </ImageView>
+    <StackPane fx:id="discardPile" layoutX="684.0" layoutY="211.0" prefHeight="100.0" prefWidth="100.0" visible="true" />
+    <Rectangle id="computer" arcHeight="0.0" arcWidth="0.0" fill="PINK" height="190.0" layoutX="14.0" layoutY="0.0" opacity=".25" stroke="BLACK" strokeType="INSIDE" width="1500.0" />
+    <HBox id="ComputerHbox" fx:id="ComputerCardPile" layoutX="0.0" layoutY="13.0" prefHeight="174.0" prefWidth="1500.0" snapToPixel="false" spacing="5.0" />
+    <Button fx:id="startButton" layoutX="577.0" layoutY="290.0" mnemonicParsing="false" onAction="#startButtonClicked" text="Start" />
+    <StackPane fx:id="drawPile" layoutX="408.0" layoutY="211.0" maxHeight="175.0" maxWidth="175.0" prefHeight="100.0" prefWidth="100.0" />
+    <Button fx:id="pickNewCard" layoutX="17.0" layoutY="391.0" mnemonicParsing="false" onMouseClicked="#drawClicked" prefHeight="37.0" prefWidth="191.0" text="Pick New Card from Deck" textFill="#ee0404">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+    <Rectangle id="human" arcHeight="0.0" arcWidth="0.0" fill="BLACK" height="250.0" layoutX="-14.0" layoutY="450.0" onMouseEntered="#discard" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="2000.0" />
+    <HBox fx:id="UserCardPile" layoutX="2.0" layoutY="483.0" mouseTransparent="false" prefHeight="200.0" prefWidth="1933.0" snapToPixel="false" spacing="5.0" />
+    <VBox layoutX="17.0" layoutY="250.0" prefHeight="130.0" prefWidth="247.0" spacing="10.0">
+      <children>
+        <Button id="RED" fx:id="red" mnemonicParsing="false" onAction="#redButtonClicked" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: red;" text="RED" />
+        <Button fx:id="blue" mnemonicParsing="false" onAction="#blueButtonClicked" prefHeight="25.0" prefWidth="190.0" style="-fx-background-color: blue;" text="BLUE" />
+        <Button fx:id="green" mnemonicParsing="false" onAction="#greenButtonClicked" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: green;" text="GREEN" />
+        <Button fx:id="yellow" mnemonicParsing="false" onAction="#yellowButtonClicked" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: yellow;" text="YELLOW" />
+      </children>
+    </VBox>
+    <TextField alignment="CENTER" layoutX="13.0" layoutY="200.0" opacity="0.58" prefHeight="37.0" prefWidth="279.0" text="User can Choose Color on Wild Card">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtField" layoutX="903.0" layoutY="249.0" prefHeight="25.0" prefWidth="412.0" />
+      <Button fx:id="pickNewCard1" layoutX="228.0" layoutY="392.0" mnemonicParsing="false" onMouseClicked="#playComputerTurn" prefHeight="37.0" prefWidth="366.0" text="Click here for Computer" textFill="#ee0404">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="841.0" layoutY="383.0" text="Developed by: Jasmeen Kaur" textFill="#f5f0f0">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+  </children>
+</AnchorPane>
